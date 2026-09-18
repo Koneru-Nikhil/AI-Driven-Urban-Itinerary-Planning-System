@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6d2aa996881101b2bc435dc2c81dcfc0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6d2aa996881101b2bc435dc2c81dcfc0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6d2aa996881101b2bc435dc2c81dcfc0 = L.map(
+                "map_6d2aa996881101b2bc435dc2c81dcfc0",
+                {
+                    center: [31.236960927379368, 121.46441378461775],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_25dadacfb49325727842721018aaaab6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_25dadacfb49325727842721018aaaab6.addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var marker_243ded1f74ab8ab4f473ad673db41ef8 = L.marker(
+                [31.273669460028017, 121.47911127918569],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_f83bc683392780362abb0979c162de45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_243ded1f74ab8ab4f473ad673db41ef8.setIcon(icon_f83bc683392780362abb0979c162de45);
+        
+    
+        var popup_2fe831088a3776ad86e0b7c6d7e8f0dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_51541ccfdf238ff5f1eb5fa9ce80828a = $(`<div id="html_51541ccfdf238ff5f1eb5fa9ce80828a" style="width: 100.0%; height: 100.0%;">0 - Lu Xun Park</div>`)[0];
+                popup_2fe831088a3776ad86e0b7c6d7e8f0dd.setContent(html_51541ccfdf238ff5f1eb5fa9ce80828a);
+            
+        
+
+        marker_243ded1f74ab8ab4f473ad673db41ef8.bindPopup(popup_2fe831088a3776ad86e0b7c6d7e8f0dd)
+        ;
+
+        
+    
+    
+            var marker_4d72e6bd5aec2a9451966f319a373426 = L.marker(
+                [31.267815372400584, 121.48025429417116],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_e9892eb981f2c58213b7b898203e507d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4d72e6bd5aec2a9451966f319a373426.setIcon(icon_e9892eb981f2c58213b7b898203e507d);
+        
+    
+        var popup_067118d19bb1f746ee151ba59a1088e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b4ac0babe7e00514e9240e08587028a = $(`<div id="html_0b4ac0babe7e00514e9240e08587028a" style="width: 100.0%; height: 100.0%;">1 - Shanyin Road</div>`)[0];
+                popup_067118d19bb1f746ee151ba59a1088e8.setContent(html_0b4ac0babe7e00514e9240e08587028a);
+            
+        
+
+        marker_4d72e6bd5aec2a9451966f319a373426.bindPopup(popup_067118d19bb1f746ee151ba59a1088e8)
+        ;
+
+        
+    
+    
+            var marker_43ac5dbceea8001e516710d0f60f4069 = L.marker(
+                [31.246359564738338, 121.48031409041563],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_adc39db948bd46f919593d752f360d4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_43ac5dbceea8001e516710d0f60f4069.setIcon(icon_adc39db948bd46f919593d752f360d4a);
+        
+    
+        var popup_5447ce9ca6c567ed6ef5c44e43e26abb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92ab7bf32aa1d9b443a1d61b948a4b34 = $(`<div id="html_92ab7bf32aa1d9b443a1d61b948a4b34" style="width: 100.0%; height: 100.0%;">2 - Shanghai Postal Museum</div>`)[0];
+                popup_5447ce9ca6c567ed6ef5c44e43e26abb.setContent(html_92ab7bf32aa1d9b443a1d61b948a4b34);
+            
+        
+
+        marker_43ac5dbceea8001e516710d0f60f4069.bindPopup(popup_5447ce9ca6c567ed6ef5c44e43e26abb)
+        ;
+
+        
+    
+    
+            var marker_84b241e4ce1f1359d3dc840cd05bed37 = L.marker(
+                [31.24569946084326, 121.48131383559206],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_0caf1b388a3708a2bb39531beb07027a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_84b241e4ce1f1359d3dc840cd05bed37.setIcon(icon_0caf1b388a3708a2bb39531beb07027a);
+        
+    
+        var popup_8e271c69bca3cbec0b1c0ac480c197c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b3059064f17e3097da4b0f52bdd90aac = $(`<div id="html_b3059064f17e3097da4b0f52bdd90aac" style="width: 100.0%; height: 100.0%;">3 - Sichuan Road Bridge</div>`)[0];
+                popup_8e271c69bca3cbec0b1c0ac480c197c2.setContent(html_b3059064f17e3097da4b0f52bdd90aac);
+            
+        
+
+        marker_84b241e4ce1f1359d3dc840cd05bed37.bindPopup(popup_8e271c69bca3cbec0b1c0ac480c197c2)
+        ;
+
+        
+    
+    
+            var marker_afd1332073f0fdb50e007cc28860f931 = L.marker(
+                [31.246473419229524, 121.48332756930998],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_c01ed835e2267ad869a13ebfcca934ce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_afd1332073f0fdb50e007cc28860f931.setIcon(icon_c01ed835e2267ad869a13ebfcca934ce);
+        
+    
+        var popup_1905a822d09e696e890a074636399fa4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_431c5d5b8bb675000e28212095580ced = $(`<div id="html_431c5d5b8bb675000e28212095580ced" style="width: 100.0%; height: 100.0%;">4 - Zhapu Road Bridge</div>`)[0];
+                popup_1905a822d09e696e890a074636399fa4.setContent(html_431c5d5b8bb675000e28212095580ced);
+            
+        
+
+        marker_afd1332073f0fdb50e007cc28860f931.bindPopup(popup_1905a822d09e696e890a074636399fa4)
+        ;
+
+        
+    
+    
+            var marker_19dbbb6355230d627e9bd63b9405e7b2 = L.marker(
+                [31.24529724127721, 121.48569788029586],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_4099e089c587a2f4c113e929e93ea256 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_19dbbb6355230d627e9bd63b9405e7b2.setIcon(icon_4099e089c587a2f4c113e929e93ea256);
+        
+    
+        var popup_671cba362abb1c3b726c05e7d7ebdf27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd7a28ab21bfa4ff35a965f13ad34cc0 = $(`<div id="html_fd7a28ab21bfa4ff35a965f13ad34cc0" style="width: 100.0%; height: 100.0%;">5 - Waibaidu Bridge</div>`)[0];
+                popup_671cba362abb1c3b726c05e7d7ebdf27.setContent(html_fd7a28ab21bfa4ff35a965f13ad34cc0);
+            
+        
+
+        marker_19dbbb6355230d627e9bd63b9405e7b2.bindPopup(popup_671cba362abb1c3b726c05e7d7ebdf27)
+        ;
+
+        
+    
+    
+            var marker_6345072ae4334502fa7a4b5947b324d8 = L.marker(
+                [31.23951138603159, 121.48010601643348],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_309855bfdbf72547c6e4fce80619ae59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6345072ae4334502fa7a4b5947b324d8.setIcon(icon_309855bfdbf72547c6e4fce80619ae59);
+        
+    
+        var popup_cc839f2a241eadf5d7cf0807fdbe28a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce37932739eef2bc216d35353b9a1ab1 = $(`<div id="html_ce37932739eef2bc216d35353b9a1ab1" style="width: 100.0%; height: 100.0%;">6 - Nanjing Road Pedestrian Street</div>`)[0];
+                popup_cc839f2a241eadf5d7cf0807fdbe28a8.setContent(html_ce37932739eef2bc216d35353b9a1ab1);
+            
+        
+
+        marker_6345072ae4334502fa7a4b5947b324d8.bindPopup(popup_cc839f2a241eadf5d7cf0807fdbe28a8)
+        ;
+
+        
+    
+    
+            var marker_10db1c19fb8643fcbb177275264f0d88 = L.marker(
+                [31.241185858189375, 121.48465718720516],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_5355fb627fe9bdb545709637962e6497 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_10db1c19fb8643fcbb177275264f0d88.setIcon(icon_5355fb627fe9bdb545709637962e6497);
+        
+    
+        var popup_f194ab7e1e614451d453eec1fe778449 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dbf54a44ad47b19dc50102e139baad07 = $(`<div id="html_dbf54a44ad47b19dc50102e139baad07" style="width: 100.0%; height: 100.0%;">7 - Shanghai Peace Hotel</div>`)[0];
+                popup_f194ab7e1e614451d453eec1fe778449.setContent(html_dbf54a44ad47b19dc50102e139baad07);
+            
+        
+
+        marker_10db1c19fb8643fcbb177275264f0d88.bindPopup(popup_f194ab7e1e614451d453eec1fe778449)
+        ;
+
+        
+    
+    
+            var marker_51ea1d46319be0c783bfe4182a7a97fe = L.marker(
+                [31.239757755232127, 121.4861376378609],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_ab0ee3a72869446f651583f37ea5e770 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_51ea1d46319be0c783bfe4182a7a97fe.setIcon(icon_ab0ee3a72869446f651583f37ea5e770);
+        
+    
+        var popup_7bcd2da58e805c8b92a9e350cfd2abe0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35e0c0014c11e3adc577c49cf558582f = $(`<div id="html_35e0c0014c11e3adc577c49cf558582f" style="width: 100.0%; height: 100.0%;">8 - The Bund</div>`)[0];
+                popup_7bcd2da58e805c8b92a9e350cfd2abe0.setContent(html_35e0c0014c11e3adc577c49cf558582f);
+            
+        
+
+        marker_51ea1d46319be0c783bfe4182a7a97fe.bindPopup(popup_7bcd2da58e805c8b92a9e350cfd2abe0)
+        ;
+
+        
+    
+    
+            var marker_1449d2bf72a07e7d0d2bb4d1a04edc45 = L.marker(
+                [31.21654495629427, 121.46438298252487],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_1fe4bddb639896a8f5df6a88b119a95a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1449d2bf72a07e7d0d2bb4d1a04edc45.setIcon(icon_1fe4bddb639896a8f5df6a88b119a95a);
+        
+    
+        var popup_f8d5dd25456e0bb2d984089f40a9b43c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2136eeef745cd9005e13403627fd45d2 = $(`<div id="html_2136eeef745cd9005e13403627fd45d2" style="width: 100.0%; height: 100.0%;">9 - Sinan Mansions</div>`)[0];
+                popup_f8d5dd25456e0bb2d984089f40a9b43c.setContent(html_2136eeef745cd9005e13403627fd45d2);
+            
+        
+
+        marker_1449d2bf72a07e7d0d2bb4d1a04edc45.bindPopup(popup_f8d5dd25456e0bb2d984089f40a9b43c)
+        ;
+
+        
+    
+    
+            var marker_c160262411465bf32f1b28de0b0d9805 = L.marker(
+                [31.199271147279763, 121.43784808620515],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_bc7382a9395d0f16380bbc9b5a8c07ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c160262411465bf32f1b28de0b0d9805.setIcon(icon_bc7382a9395d0f16380bbc9b5a8c07ef);
+        
+    
+        var popup_9d8e9cf79d8bf352eeb749d6eea99b39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79cb9cdffd9775fc6708b7cf658782c5 = $(`<div id="html_79cb9cdffd9775fc6708b7cf658782c5" style="width: 100.0%; height: 100.0%;">10 - Xujiahui Park</div>`)[0];
+                popup_9d8e9cf79d8bf352eeb749d6eea99b39.setContent(html_79cb9cdffd9775fc6708b7cf658782c5);
+            
+        
+
+        marker_c160262411465bf32f1b28de0b0d9805.bindPopup(popup_9d8e9cf79d8bf352eeb749d6eea99b39)
+        ;
+
+        
+    
+    
+            var marker_7d6b34c2417c5070a44178264f944fbb = L.marker(
+                [31.20630644970961, 121.43364406281951],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_26aa6b0590342cc5e7dd511aede8e3b6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7d6b34c2417c5070a44178264f944fbb.setIcon(icon_26aa6b0590342cc5e7dd511aede8e3b6);
+        
+    
+        var popup_7d7f4850aed1bb759e9e6ea4ea7763d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67231080ac58351a0f2b28c1eaf3a3bd = $(`<div id="html_67231080ac58351a0f2b28c1eaf3a3bd" style="width: 100.0%; height: 100.0%;">11 - Wukang Mansion</div>`)[0];
+                popup_7d7f4850aed1bb759e9e6ea4ea7763d1.setContent(html_67231080ac58351a0f2b28c1eaf3a3bd);
+            
+        
+
+        marker_7d6b34c2417c5070a44178264f944fbb.bindPopup(popup_7d7f4850aed1bb759e9e6ea4ea7763d1)
+        ;
+
+        
+    
+    
+            var marker_9c6966692b2f0d28f4d34f95e005cfa4 = L.marker(
+                [31.213209600985646, 121.44177431246023],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_c31312dcf1f9fbd7a0b469e1e6eae7fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9c6966692b2f0d28f4d34f95e005cfa4.setIcon(icon_c31312dcf1f9fbd7a0b469e1e6eae7fc);
+        
+    
+        var popup_2723ca44efe5bb166c9fba040d3db03c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e9d4ec696c21be9aa557d3b978b4b99c = $(`<div id="html_e9d4ec696c21be9aa557d3b978b4b99c" style="width: 100.0%; height: 100.0%;">12 - Wu Zhong Market</div>`)[0];
+                popup_2723ca44efe5bb166c9fba040d3db03c.setContent(html_e9d4ec696c21be9aa557d3b978b4b99c);
+            
+        
+
+        marker_9c6966692b2f0d28f4d34f95e005cfa4.bindPopup(popup_2723ca44efe5bb166c9fba040d3db03c)
+        ;
+
+        
+    
+    
+            var marker_6f3c6c1d197a53d3134480dac6c03e4a = L.marker(
+                [31.2253742983598, 121.440723789598],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_4c3fd1ac11092e00025bee4caa2d6a14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6f3c6c1d197a53d3134480dac6c03e4a.setIcon(icon_4c3fd1ac11092e00025bee4caa2d6a14);
+        
+    
+        var popup_c11fa64b9da3d6e05f3a66ce08d1311a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17394703742e8b96a7aa101a18e42dbe = $(`<div id="html_17394703742e8b96a7aa101a18e42dbe" style="width: 100.0%; height: 100.0%;">13 - Shanghai Jing’an Temple</div>`)[0];
+                popup_c11fa64b9da3d6e05f3a66ce08d1311a.setContent(html_17394703742e8b96a7aa101a18e42dbe);
+            
+        
+
+        marker_6f3c6c1d197a53d3134480dac6c03e4a.bindPopup(popup_c11fa64b9da3d6e05f3a66ce08d1311a)
+        ;
+
+        
+    
+    
+            var marker_b74157deb8e49bd2d11d974d8b0cbdcf = L.marker(
+                [31.227157569452114, 121.44280253291856],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_30100019252f449b1a757194bcd5a6e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b74157deb8e49bd2d11d974d8b0cbdcf.setIcon(icon_30100019252f449b1a757194bcd5a6e1);
+        
+    
+        var popup_90e9ec47a6e6c62890a7e872b7a8a52e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_93fff9c18452986e979c7bb4084a950b = $(`<div id="html_93fff9c18452986e979c7bb4084a950b" style="width: 100.0%; height: 100.0%;">14 - Yuyuan Road</div>`)[0];
+                popup_90e9ec47a6e6c62890a7e872b7a8a52e.setContent(html_93fff9c18452986e979c7bb4084a950b);
+            
+        
+
+        marker_b74157deb8e49bd2d11d974d8b0cbdcf.bindPopup(popup_90e9ec47a6e6c62890a7e872b7a8a52e)
+        ;
+
+        
+    
+    
+            var marker_3a533b0e01393b9df0441bf44b682a81 = L.marker(
+                [31.244695375294842, 121.44816629669523],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_363d27399406c8cb2729fca908b45358 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3a533b0e01393b9df0441bf44b682a81.setIcon(icon_363d27399406c8cb2729fca908b45358);
+        
+    
+        var popup_1a026d17ca7c4975c9ab3def6ac4d523 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a33b0a47aa4e978b9a3d81bf3cfe530 = $(`<div id="html_2a33b0a47aa4e978b9a3d81bf3cfe530" style="width: 100.0%; height: 100.0%;">15 - Blue Bottle Coffee</div>`)[0];
+                popup_1a026d17ca7c4975c9ab3def6ac4d523.setContent(html_2a33b0a47aa4e978b9a3d81bf3cfe530);
+            
+        
+
+        marker_3a533b0e01393b9df0441bf44b682a81.bindPopup(popup_1a026d17ca7c4975c9ab3def6ac4d523)
+        ;
+
+        
+    
+    
+            var marker_e2363d7d993bb2b1b000f2143e92656f = L.marker(
+                [31.250006850103173, 121.44477248481013],
+                {}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+    
+            var icon_b97384f3b75c876dd7a3b2712723b330 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e2363d7d993bb2b1b000f2143e92656f.setIcon(icon_b97384f3b75c876dd7a3b2712723b330);
+        
+    
+        var popup_dba09b44683e44bd462eefe34eea795c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_df6e9696f1d1158832e8032f91f35a92 = $(`<div id="html_df6e9696f1d1158832e8032f91f35a92" style="width: 100.0%; height: 100.0%;">16 - M50 Art District</div>`)[0];
+                popup_dba09b44683e44bd462eefe34eea795c.setContent(html_df6e9696f1d1158832e8032f91f35a92);
+            
+        
+
+        marker_e2363d7d993bb2b1b000f2143e92656f.bindPopup(popup_dba09b44683e44bd462eefe34eea795c)
+        ;
+
+        
+    
+    
+            var poly_line_90bf6dfff9cc6c9600f1362edd34731e = L.polyline(
+                [[31.273669460028017, 121.47911127918569], [31.267815372400584, 121.48025429417116], [31.246359564738338, 121.48031409041563], [31.24569946084326, 121.48131383559206], [31.246473419229524, 121.48332756930998], [31.24529724127721, 121.48569788029586], [31.23951138603159, 121.48010601643348], [31.241185858189375, 121.48465718720516], [31.239757755232127, 121.4861376378609], [31.21654495629427, 121.46438298252487], [31.199271147279763, 121.43784808620515], [31.20630644970961, 121.43364406281951], [31.213209600985646, 121.44177431246023], [31.2253742983598, 121.440723789598], [31.227157569452114, 121.44280253291856], [31.244695375294842, 121.44816629669523], [31.250006850103173, 121.44477248481013]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_6d2aa996881101b2bc435dc2c81dcfc0);
+        
+</script>
+</html>

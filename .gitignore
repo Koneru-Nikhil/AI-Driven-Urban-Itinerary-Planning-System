@@ -1,0 +1,77 @@
+# ==============================
+# Python virtual environment
+# ==============================
+venv/
+.venv/
+
+# ==============================
+# Python cache
+# ==============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ==============================
+# Environment variables / API keys
+# ==============================
+.env
+.env.*
+
+# ==============================
+# Node dependencies
+# ==============================
+node_modules/
+
+# ==============================
+# Build files
+# ==============================
+dist/
+build/
+
+# ==============================
+# Large OSM source data
+# ==============================
+*.osm.pbf
+
+# ==============================
+# Large generated road datasets
+# ==============================
+Hyderabad_Road_Nodes.csv
+Hyderabad_Road_Edges.csv
+Hyderabad_Largest_Component_Nodes.csv
+Hyderabad_Largest_Component_Edges.csv
+Hyderabad_POIs.csv
+
+# ==============================
+# Old disconnected graph subsets
+# ==============================
+graph_subsets/
+
+# ==============================
+# Generated connected graph datasets
+# ==============================
+connected_subsets/
+
+# ==============================
+# Python/Jupyter temporary files
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# OS/editor files
+# ==============================
+.DS_Store
+Thumbs.db
+.vscode/
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
