@@ -20,6 +20,10 @@ from route_optimization_research.algorithms.bidirectional_dijkstra import (
     bidirectional_dijkstra
 )
 
+from route_optimization_research.algorithms.bidirectional_astar import (
+    bidirectional_astar
+)
+
 
 # ============================================================
 # CONFIGURATION
@@ -171,6 +175,7 @@ print(f"Generated {len(pairs)} pairs.")
 # ============================================================
 
 print()
+
 print("=" * 70)
 print("RUNNING ROUTE BENCHMARK")
 print("=" * 70)
@@ -284,6 +289,24 @@ for i, (source, target) in enumerate(
     )
 
     # --------------------------------------------------------
+    # BIDIRECTIONAL A*
+    # --------------------------------------------------------
+
+    ba = bidirectional_astar(
+        graph,
+        reverse_graph,
+        nodes,
+        source,
+        target
+    )
+
+    print(
+        f"Bi-A*:       "
+        f"{ba['execution_time_ms']:.3f} ms | "
+        f"{ba['nodes_explored']:,} nodes"
+    )
+
+    # --------------------------------------------------------
     # PATH VALIDATION
     # --------------------------------------------------------
 
@@ -308,6 +331,13 @@ for i, (source, target) in enumerate(
         graph
     )
 
+    ba_path_valid, ba_path_distance = validate_path(
+        ba["path"],
+        source,
+        target,
+        graph
+    )
+
     # --------------------------------------------------------
     # COMMON ROUTE VALIDATION
     # --------------------------------------------------------
@@ -316,45 +346,29 @@ for i, (source, target) in enumerate(
         d["found"]
         and a["found"]
         and b["found"]
+        and ba["found"]
         and d_path_valid
         and a_path_valid
         and b_path_valid
+        and ba_path_valid
     )
 
     if valid:
 
         distance_difference = max(
-            abs(
-                d["distance_km"]
-                - a["distance_km"]
-            ),
-
-            abs(
-                d["distance_km"]
-                - b["distance_km"]
-            ),
-
-            abs(
-                a["distance_km"]
-                - b["distance_km"]
-            )
+            abs(d["distance_km"] - a["distance_km"]),
+            abs(d["distance_km"] - b["distance_km"]),
+            abs(d["distance_km"] - ba["distance_km"]),
+            abs(a["distance_km"] - b["distance_km"]),
+            abs(a["distance_km"] - ba["distance_km"]),
+            abs(b["distance_km"] - ba["distance_km"])
         )
 
         path_distance_difference = max(
-            abs(
-                d["distance_km"]
-                - d_path_distance
-            ),
-
-            abs(
-                a["distance_km"]
-                - a_path_distance
-            ),
-
-            abs(
-                b["distance_km"]
-                - b_path_distance
-            )
+            abs(d["distance_km"] - d_path_distance),
+            abs(a["distance_km"] - a_path_distance),
+            abs(b["distance_km"] - b_path_distance),
+            abs(ba["distance_km"] - ba_path_distance)
         )
 
     else:
@@ -370,7 +384,8 @@ for i, (source, target) in enumerate(
         f"Path validation: "
         f"Dijkstra={'PASS' if d_path_valid else 'FAIL'}, "
         f"A*={'PASS' if a_path_valid else 'FAIL'}, "
-        f"Bi-Dijkstra={'PASS' if b_path_valid else 'FAIL'}"
+        f"Bi-Dijkstra={'PASS' if b_path_valid else 'FAIL'}, "
+        f"Bi-A*={'PASS' if ba_path_valid else 'FAIL'}"
     )
 
     if valid:
@@ -401,6 +416,9 @@ for i, (source, target) in enumerate(
         "bidirectional_dijkstra_time_ms":
             b["execution_time_ms"],
 
+        "bidirectional_astar_time_ms":
+            ba["execution_time_ms"],
+
         "dijkstra_nodes":
             d["nodes_explored"],
 
@@ -409,6 +427,9 @@ for i, (source, target) in enumerate(
 
         "bidirectional_dijkstra_nodes":
             b["nodes_explored"],
+
+        "bidirectional_astar_nodes":
+            ba["nodes_explored"],
 
         "dijkstra_distance_km":
             d["distance_km"],
@@ -419,6 +440,9 @@ for i, (source, target) in enumerate(
         "bidirectional_dijkstra_distance_km":
             b["distance_km"],
 
+        "bidirectional_astar_distance_km":
+            ba["distance_km"],
+
         "dijkstra_path_valid":
             d_path_valid,
 
@@ -427,6 +451,9 @@ for i, (source, target) in enumerate(
 
         "bidirectional_dijkstra_path_valid":
             b_path_valid,
+
+        "bidirectional_astar_path_valid":
+            ba_path_valid,
 
         "valid":
             valid,
@@ -473,6 +500,44 @@ valid_results = [
     r for r in results
     if r["valid"]
 ]
+
+
+# ============================================================
+# OVERALL ACCURACY CHECK
+# ============================================================
+
+print()
+print("OVERALL ACCURACY CHECK")
+print("-" * 70)
+
+if valid_results:
+
+    accuracy_passed = (
+        len(valid_results) == NUM_PAIRS
+        and all(
+            r["max_distance_difference_km"] is not None
+            and r["max_distance_difference_km"] < 1e-9
+            and r["path_distance_difference_km"] is not None
+            and r["path_distance_difference_km"] < 1e-9
+            for r in valid_results
+        )
+    )
+
+    print(
+        "OVERALL ACCURACY CHECK: "
+        + ("PASS" if accuracy_passed else "CHECK REQUIRED")
+    )
+
+    if not accuracy_passed:
+        print(
+            "Note: accuracy is evaluated on common valid routes. "
+            "If fewer than all generated pairs are valid, the dataset "
+            "contains unreachable directed source-target pairs."
+        )
+
+else:
+    print("OVERALL ACCURACY CHECK: CHECK REQUIRED")
+    print("No common valid routes were available for comparison.")
 
 
 print()
@@ -540,6 +605,10 @@ if valid_results:
         "bidirectional_dijkstra_time_ms"
     )
 
+    ba_time = average(
+        "bidirectional_astar_time_ms"
+    )
+
 
     d_nodes = average(
         "dijkstra_nodes"
@@ -553,6 +622,10 @@ if valid_results:
         "bidirectional_dijkstra_nodes"
     )
 
+    ba_nodes = average(
+        "bidirectional_astar_nodes"
+    )
+
 
     d_distance = average(
         "dijkstra_distance_km"
@@ -564,6 +637,10 @@ if valid_results:
 
     b_distance = average(
         "bidirectional_dijkstra_distance_km"
+    )
+
+    ba_distance = average(
+        "bidirectional_astar_distance_km"
     )
 
 
@@ -591,6 +668,11 @@ if valid_results:
     )
 
     print(
+        f"Bi-A* time          : "
+        f"{ba_time:.3f} ms"
+    )
+
+    print(
         f"Dijkstra nodes      : "
         f"{d_nodes:,.0f}"
     )
@@ -603,6 +685,11 @@ if valid_results:
     print(
         f"Bi-Dijkstra nodes   : "
         f"{b_nodes:,.0f}"
+    )
+
+    print(
+        f"Bi-A* nodes         : "
+        f"{ba_nodes:,.0f}"
     )
 
 
@@ -624,6 +711,11 @@ if valid_results:
     print(
         f"Bi-Dijkstra distance: "
         f"{b_distance:.6f} km"
+    )
+
+    print(
+        f"Bi-A* distance      : "
+        f"{ba_distance:.6f} km"
     )
 
 
@@ -650,6 +742,11 @@ if valid_results:
         f"{median('bidirectional_dijkstra_time_ms'):.3f} ms"
     )
 
+    print(
+        f"Bi-A* median        : "
+        f"{median('bidirectional_astar_time_ms'):.3f} ms"
+    )
+
 
     # --------------------------------------------------------
     # COMPARATIVE METRICS
@@ -670,6 +767,11 @@ if valid_results:
     )
 
     print(
+        f"Bi-A* speedup            : "
+        f"{d_time / ba_time:.2f}x"
+    )
+
+    print(
         f"A* node reduction       : "
         f"{(1 - a_nodes / d_nodes) * 100:.2f}%"
     )
@@ -679,10 +781,50 @@ if valid_results:
         f"{(1 - b_nodes / d_nodes) * 100:.2f}%"
     )
 
+    print(
+        f"Bi-A* node reduction     : "
+        f"{(1 - ba_nodes / d_nodes) * 100:.2f}%"
+    )
+
 
     # --------------------------------------------------------
     # MAX DISTANCE DIFFERENCE
     # --------------------------------------------------------
+
+    # --------------------------------------------------------
+    # ACCURACY / CORRECTNESS SUMMARY
+    # --------------------------------------------------------
+
+    print()
+    print("ACCURACY / CORRECTNESS SUMMARY")
+    print("-" * 70)
+
+    print(
+        f"Valid Dijkstra paths        : "
+        f"{sum(r['dijkstra_path_valid'] for r in valid_results)}/{len(valid_results)}"
+    )
+
+    print(
+        f"Valid A* paths              : "
+        f"{sum(r['astar_path_valid'] for r in valid_results)}/{len(valid_results)}"
+    )
+
+    print(
+        f"Valid Bi-Dijkstra paths     : "
+        f"{sum(r['bidirectional_dijkstra_path_valid'] for r in valid_results)}/{len(valid_results)}"
+    )
+
+    print(
+        f"Valid Bi-A* paths           : "
+        f"{sum(r['bidirectional_astar_path_valid'] for r in valid_results)}/{len(valid_results)}"
+    )
+
+    print(
+        f"Common valid routes         : "
+        f"{len(valid_results)}/{NUM_PAIRS}"
+    )
+
+    print()
 
     max_difference = max(
         r["max_distance_difference_km"]
