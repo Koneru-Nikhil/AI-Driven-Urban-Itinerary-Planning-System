@@ -1,0 +1,37 @@
+case_id,interest_profile,poi_count,unique_road_nodes,shared_road_node_count,geographic_spread_km,matrix_exists,matrix_shape_valid,diagonal_zero,unreachable_pairs,reachable_pairs,strongly_feasible,start_to_all_reachable,all_to_end_reachable,full_order_feasible
+S001,Food,10,10,0,25.8329,True,True,True,0,100,True,True,True,True
+S002,Food,20,20,0,24.5152,True,True,True,0,400,True,True,True,True
+S003,Food,30,30,0,28.5227,True,True,True,0,900,True,True,True,True
+S004,Shopping,10,10,0,28.7642,True,True,True,0,100,True,True,True,True
+S005,Shopping,20,20,0,34.4313,True,True,True,0,400,True,True,True,True
+S006,Shopping,30,30,0,40.0455,True,True,True,0,900,True,True,True,True
+S007,Religion,10,10,0,25.6019,True,True,True,0,100,True,True,True,True
+S008,Religion,20,20,0,27.5312,True,True,True,0,400,True,True,True,True
+S009,Religion,30,30,0,41.3242,True,True,True,0,900,True,True,True,True
+S010,Nature & Outdoors,10,10,0,30.9691,True,True,True,0,100,True,True,True,True
+S011,Nature & Outdoors,20,20,0,26.0569,True,True,True,0,400,True,True,True,True
+S012,Nature & Outdoors,30,30,0,29.1419,True,True,True,0,900,True,True,True,True
+S013,Culture & Heritage,10,10,0,24.9728,True,True,True,0,100,True,True,True,True
+S014,Culture & Heritage,20,18,2,27.402,True,True,True,0,400,True,True,True,True
+S015,Culture & Heritage,30,30,0,34.9431,True,True,True,0,900,True,True,True,True
+S016,Entertainment,10,10,0,24.2852,True,True,True,0,100,True,True,True,True
+S017,Entertainment,20,20,0,33.3652,True,True,True,0,400,True,True,True,True
+S018,Entertainment,30,30,0,35.7224,True,True,True,0,900,True,True,True,True
+S019,Recreation & Sports,10,10,0,36.2378,True,True,True,0,100,True,True,True,True
+S020,Recreation & Sports,20,20,0,38.0118,True,True,True,0,400,True,True,True,True
+S021,Recreation & Sports,30,30,0,31.6723,True,True,True,0,900,True,True,True,True
+M001,Food + Shopping,10,10,0,24.7386,True,True,True,0,100,True,True,True,True
+M002,Food + Shopping,20,20,0,34.5876,True,True,True,19,381,False,False,True,False
+M003,Food + Shopping,30,30,0,27.2852,True,True,True,0,900,True,True,True,True
+M004,Culture & Heritage + Religion,10,10,0,24.1886,True,True,True,0,100,True,True,True,True
+M005,Culture & Heritage + Religion,20,20,0,37.7805,True,True,True,0,400,True,True,True,True
+M006,Culture & Heritage + Religion,30,30,0,34.9127,True,True,True,0,900,True,True,True,True
+M007,Food + Entertainment,10,10,0,19.999,True,True,True,0,100,True,True,True,True
+M008,Food + Entertainment,20,20,0,36.1547,True,True,True,0,400,True,True,True,True
+M009,Food + Entertainment,30,30,0,32.1852,True,True,True,0,900,True,True,True,True
+M010,Nature & Outdoors + Recreation & Sports,10,10,0,24.4925,True,True,True,0,100,True,True,True,True
+M011,Nature & Outdoors + Recreation & Sports,20,20,0,34.0158,True,True,True,0,400,True,True,True,True
+M012,Nature & Outdoors + Recreation & Sports,30,30,0,36.0803,True,True,True,0,900,True,True,True,True
+M013,Culture & Heritage + Food,10,10,0,24.6306,True,True,True,0,100,True,True,True,True
+M014,Culture & Heritage + Food,20,20,0,24.4293,True,True,True,0,400,True,True,True,True
+M015,Culture & Heritage + Food,30,29,1,24.5474,True,True,True,0,900,True,True,True,True

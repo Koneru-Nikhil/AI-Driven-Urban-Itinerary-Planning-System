@@ -1,0 +1,2 @@
+total_cases,feasible_cases,infeasible_cases,avg_execution_time_ms,median_execution_time_ms,min_execution_time_ms,max_execution_time_ms,avg_distance_km,median_distance_km,avg_candidate_evaluations
+36,35,1,956.0199314295979,929.6639000531286,437.74399999529123,1543.2977000018582,138.34162328571426,130.811873,95000.0
